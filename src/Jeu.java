@@ -36,12 +36,34 @@ public class Jeu {
         System.out.println("Maintenant le tour est pour " + joueur2.getNom());
         choix = sc.nextLine();
         joueur2.setChoix(choix);
-        String lancePileFace = lancerPiece();
-        if (joueur1.getChoix().equals(lancePileFace) ){
-            joueur1.setScore(joueur1.getScore() +1);
-        }
-        if (joueur2.getChoix().equals(lancePileFace)){
-            joueur2.setScore(joueur2.getScore() +1);
+        System.out.println("Y a-t il un joueur favorisé ? o = oui, n = non");
+        String fav= sc.nextLine();
+        if (fav.equals("n")){
+            String lancePileFace = lancerPiece();
+            if (joueur1.getChoix().equals(lancePileFace) ){
+                joueur1.setScore(joueur1.getScore() +1);
+            }
+            if (joueur2.getChoix().equals(lancePileFace)){
+                joueur2.setScore(joueur2.getScore() +1);
+            }
+        }else{
+            System.out.println("Voulez-vous favoriser le joueur 1 " + joueur1.getNom() +
+                    ", ou le joueur 2 "+joueur2.getNom() +"?  1 pour joueur 1 et 2 pour joueur 2");
+            String r = sc.nextLine();
+
+            String choixFavorisant;
+            if(r.equals("1")){
+                choixFavorisant = joueur1.getChoix();
+            }else{
+                choixFavorisant = joueur2.getChoix();
+            }
+//            String lancePileFace = lancerPiece();
+            if (joueur1.getChoix().equals(choixFavorisant) ){
+                joueur1.setScore(joueur1.getScore() +1);
+            }
+            if (joueur2.getChoix().equals(choixFavorisant)){
+                joueur2.setScore(joueur2.getScore() +1);
+            }
         }
     }
     public static String lancerPiece(){
