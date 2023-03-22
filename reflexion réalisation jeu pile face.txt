@@ -1,0 +1,18 @@
+Chaque joueur a un nom, et un score par défaut a 0.
+
+La pièce a 2 faces,
+
+
+Les différentes manières de gagner, il y a 4 cas:
+1 - Les 2 joueurs ont choisi pile ou face et ont gagné ou perdu
+2 - Les 2 joueurs ont choisi pile ou face et ont perdu
+3 - joueur 1 a gagné
+4 - joueur 2 a perdu
+
+Pour réaliser ce jeu, j'ai besoin d'une classe Jeu, Joueur, Pièce.
+
+La classe Jeu comportera la class main, et initialisera les 2 joueurs.
+La classe Joueur aura simplement le nom et score du joueur.
+La classe Pièce aura 2 attributs pile/face
+
+

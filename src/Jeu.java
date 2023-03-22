@@ -1,16 +1,12 @@
 import java.util.Scanner;
-
 public class Jeu {
-
     public static void lancerJeu(){
-
         char commenceJeux = 'o';
         char saisiUsers= 'n';
         int result;
         System.out.println("Quel est le nom du joueur 1 ");
         Scanner scanner = new Scanner(System.in);
         Joueur joueur1 = new Joueur(scanner.nextLine());
-
         System.out.println("Quel est le nom du joueur 2 ");
         Joueur joueur2 = new Joueur(scanner.nextLine());
         debut();
@@ -37,17 +33,12 @@ public class Jeu {
     public static void start(Joueur joueur1, Joueur joueur2){
         Scanner sc = new Scanner(System.in);
         System.out.println("Quel est votre choix ? le tour est pour " + joueur1.getNom() +", pile ou face?");
-
         String choix = sc.nextLine();
-
         joueur1.setChoix(choix);
         System.out.println("Maintenant le tour est pour " + joueur2.getNom());
-
         choix = sc.nextLine();
         joueur2.setChoix(choix);
-
         String lancePileFace = lancerPileFace();
-
         if (joueur1.getChoix().equals(lancePileFace) ){
             joueur1.setScore(joueur1.getScore() +1);
         }
@@ -57,9 +48,8 @@ public class Jeu {
     }
 
     public static String lancerPileFace(){
-        String piece = (Math.random() <= 0.2) ? "pile": "face";
-        System.out.println(piece);
-        return piece;
+        Piece piecePileFace = new Piece();
+        return piecePileFace.getPiece();
     }
     public static void debut(){
         System.out.println("---------------------------------*------------------------------");
