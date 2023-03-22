@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Jeu {
 
-    public static void main (String[] args) {
+    public static void lancerJeu(){
+
         char commenceJeux = 'o';
         char saisiUsers= 'n';
         int result;
@@ -31,12 +32,11 @@ public class Jeu {
         }else {
             System.out.println("match nul, vous avez tous les deux le même nombre de points!");
         }
-
     }
 
     public static void start(Joueur joueur1, Joueur joueur2){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Quel est votre choix ? le tour est pour " + joueur1.getNom());
+        System.out.println("Quel est votre choix ? le tour est pour " + joueur1.getNom() +", pile ou face?");
 
         String choix = sc.nextLine();
 
